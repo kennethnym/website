@@ -1,0 +1,58 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Link from "../components/Link.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { getBlogs } from "../content/blog";
+
+const posts = (await getBlogs()).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body
+		class="bg-amber-50 dark:bg-gray-900 text-gray-600 dark:text-white dark:text-opacity-70 max-w-4xl m-auto p-8"
+	>
+		<header>
+			<p class="font-bold text-2xl">kennethnym</p>
+		</header>
+		<main class="py-8">
+			<p>dumping ground for my thoughts. all opinions are my own.</p>
+			<h1 class="font-bold mt-8 mb-2 text-lg visited">current projects:</h1>
+			<ul class="not-prose space-y-4 md:space-y-2">
+				<li>
+					<Link href="https://polygui.org">poly</Link>: a language-agnostic,
+					cross-platform GUI framework for building OS-native applications.
+				</li>
+				<li>
+					<Link href="https://polygui.org/nanopack/introduction/">nanopack</Link
+					>: a zero-runtime, type-safe binary serialization format.
+				</li>
+				<li>
+					<Link href="https://github.com/kennethnym/StarlightLauncher"
+						>starlight launcher</Link
+					>: an open-source android launcher with a search-based ui.
+				</li>
+			</ul>
+			<h1 class="font-bold mt-8 mb-2 text-lg visited">my thoughts:</h1>
+			<ul>
+				{
+					posts.map((post) => (
+						<li class="flex flex-row justify-between hover:bg-amber-100 dark:hover:bg-gray-700 -mx-2 px-2 rounded">
+							<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
+							<FormattedDate date={post.data.pubDate} />
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<hr class="py-2" />
+		<Footer />
+	</body>
+</html>

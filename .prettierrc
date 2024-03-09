@@ -1,0 +1,7 @@
+{
+  "plugins": [
+    "prettier-plugin-astro"
+  ],
+  "useTabs": true,
+  "tabWidth": 2
+}

@@ -1,0 +1,14 @@
+---
+import Link from "./Link.astro";
+const today = new Date();
+---
+
+<footer>
+	<div class="flex flex-row space-x-2">
+		<Link href="https://github.com/kennethnym">github</Link>
+		<Link href="https://x.com/kennethnym">x.com</Link>
+		<Link href="mailto:kennethnym@outlook.com">email</Link>
+		<p class="text-xs opacity-30">inbox open!</p>
+	</div>
+	<p class="text-sm opacity-50 pt-2">&copy; {today.getFullYear()} kennethnym. all rights reserved.</p>
+</footer>
