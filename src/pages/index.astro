@@ -12,12 +12,12 @@ const posts = (await getBlogs()).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="latte dark:mocha">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body
-		class="bg-amber-50 dark:bg-gray-900 text-gray-600 dark:text-white dark:text-opacity-70 max-w-4xl m-auto p-8"
+		class="bg-base text-text max-w-4xl m-auto p-8"
 	>
 		<header>
 			<p class="font-bold text-2xl">kennethnym</p>
@@ -44,7 +44,7 @@ const posts = (await getBlogs()).sort(
 			<ul>
 				{
 					posts.map((post) => (
-						<li class="flex flex-row justify-between hover:bg-amber-100 dark:hover:bg-gray-700 -mx-2 px-2 rounded">
+						<li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded">
 							<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
 							<FormattedDate date={post.data.pubDate} />
 						</li>

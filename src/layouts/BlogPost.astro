@@ -10,12 +10,12 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="latte dark:mocha">
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} />
 	</head>
 
-	<body class="bg-amber-50 dark:bg-gray-900 dark:text-white dark:text-opacity-80 max-w-prose m-auto p-8">
+	<body class="bg-base text-text max-w-prose m-auto p-8">
 		<Header />
 		<main class="py-10">
 			<article>

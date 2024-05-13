@@ -31,6 +31,9 @@ dependencies:
     version: 5.4.2
 
 devDependencies:
+  '@catppuccin/tailwindcss':
+    specifier: ^0.1.6
+    version: 0.1.6(tailwindcss@3.4.1)
   '@flydotio/dockerfile':
     specifier: latest
     version: 0.5.2
@@ -444,6 +447,14 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
     dev: false
+
+  /@catppuccin/tailwindcss@0.1.6(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-V+Y0AwZ5SSyvOVAcDl7Ng30xy+m82OKnEJ+9+kcZZ7lRyXuZrAb2GScdq9XR3v+ggt8qiZ/G4TvaC9cJ88AAXA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0'
+    dependencies:
+      tailwindcss: 3.4.1
+    dev: true
 
   /@emmetio/abbreviation@2.3.3:
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
