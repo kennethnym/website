@@ -10,6 +10,7 @@ type Props = CollectionEntry<"blog">["data"];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en" class="latte dark:mocha">
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} />
@@ -41,5 +42,5 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</main>
 		<hr class="py-4" />
 		<Footer />
-	</Body>
+	</body>
 </html>

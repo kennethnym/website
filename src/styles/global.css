@@ -1,3 +1,43 @@
+@font-face {
+	font-family: "CommitMono";
+	src: url("/fonts/CommitMono-400-Regular.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "CommitMono";
+	src: url("/fonts/CommitMono-400-Italic.otf") format("opentype");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: "CommitMono";
+	src: url("/fonts/CommitMono-700-Regular.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "CommitMono";
+	src: url("/fonts/CommitMono-700-Italic.otf") format("opentype");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: "NerdFont";
+	src: url("/fonts/SymbolsNerdFontMono-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 body {
-    font-family: monospace, monospace;
+	font-family: "CommitMono", monospace, monospace;
+}
+
+.nf {
+	font-family: "NerdFont";
 }

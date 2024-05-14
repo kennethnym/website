@@ -1,0 +1,117 @@
+<div id="command-line" class="w-full flex flex-row bg-base">
+	<input
+		id="command-line-input"
+		type="text"
+		size="1"
+		class="bg-base focus:outline-none active:outline-none cursor-default caret-transparent"
+	/>
+	<div id="caret" aria-hidden="true" class="bg-text inline-block">&nbsp;</div>
+	<p id="status-text" class="absolute w-full h-full bg-base hidden italic">
+		test
+	</p>
+</div>
+
+<script>
+	const cmds: Record<string, () => void> = {
+		q: () => {
+			document.body.style.visibility = "hidden";
+		},
+	};
+
+	const container = document.getElementById("command-line") as HTMLDivElement;
+	const commandLineInput = document.getElementById(
+		"command-line-input",
+	) as HTMLInputElement;
+	const caret = document.getElementById("caret") as HTMLDivElement;
+	const statusText = document.getElementById(
+		"status-text",
+	) as HTMLParagraphElement;
+	const allowedCharRegex = /[\w\d\s!@#$%^&*()-_+=|\\~`{[}\]:;"'<,>.?/]/;
+
+	let isInCmdMode = false;
+
+	commandLineInput.value = "";
+	caret.style.display = "none";
+
+	function enableCmdMode() {
+		caret.style.display = "block";
+		statusText.classList.add("hidden");
+		commandLineInput.size = 1;
+		commandLineInput.value = ":";
+		isInCmdMode = true;
+
+		const event = new Event("cmdmodeenabled");
+		container.dispatchEvent(event);
+	}
+
+	function disableCmdMode({ clear } = { clear: true }) {
+		caret.style.display = "none";
+		isInCmdMode = false;
+		if (clear) {
+			commandLineInput.size = 1;
+			commandLineInput.value = "";
+		}
+
+		const event = new Event("cmdmodedisabled");
+		container.dispatchEvent(event);
+	}
+
+	function appendChar(event: KeyboardEvent) {
+		commandLineInput.value += event.key;
+		commandLineInput.size += 1;
+	}
+
+	function executeCommand() {
+		disableCmdMode({ clear: false });
+		const command = commandLineInput.value.substring(1);
+		const fn = cmds[command];
+		if (fn) {
+			fn();
+		} else {
+			statusText.innerHTML = `E492: Not an editor command: ${command}`;
+			statusText.classList.remove("hidden");
+			statusText.classList.add("text-red");
+		}
+	}
+
+	document.addEventListener("keydown", (event) => {
+		switch (event.key) {
+			case ":":
+				if (!isInCmdMode) {
+					enableCmdMode();
+				} else {
+					appendChar(event);
+				}
+				break;
+
+			case "Escape":
+				disableCmdMode();
+				break;
+
+			case "Backspace":
+				commandLineInput.value = commandLineInput.value.substring(
+					0,
+					commandLineInput.value.length - 1,
+				);
+				commandLineInput.size--;
+				if (commandLineInput.value === "") {
+					disableCmdMode();
+				}
+				break;
+
+			case "Enter":
+				executeCommand();
+				break;
+
+			default:
+				if (
+					event.key.length === 1 &&
+					allowedCharRegex.test(event.key) &&
+					isInCmdMode
+				) {
+					appendChar(event);
+				}
+				break;
+		}
+	});
+</script>

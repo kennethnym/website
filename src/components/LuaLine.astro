@@ -1,0 +1,44 @@
+---
+import Link from "./Link.astro";
+import CommandLine from "./CommandLine.astro";
+---
+
+<div class="absolute w-full bottom-0">
+	<footer class="w-full bg-crust flex flex-row leading-tight">
+		<span
+			id="status-indicator"
+			class="bg-blue text-base inline-block leading-tight"
+			>&nbsp;NORMAL&nbsp;</span
+		>
+		<div class="flex flex-row bg-surface0">
+			<span>&nbsp;</span>
+			<Link href="https://github.com/kennethnym">github</Link>
+			<span>&nbsp;</span>
+			<Link href="https://x.com/kennethnym">x.com</Link>
+			<span>&nbsp;</span>
+			<Link href="mailto:kennethnym@outlook.com">email</Link>
+			<span>&nbsp;</span>
+		</div>
+	</footer>
+	<CommandLine />
+</div>
+
+<script>
+	const statusIndicator = document.getElementById(
+		"status-indicator",
+	) as HTMLSpanElement;
+	const cmdLine = document.getElementById("command-line") as HTMLDivElement;
+
+	cmdLine.addEventListener("cmdmodeenabled", () => {
+		statusIndicator.innerHTML = "&nbsp;COMMAND&nbsp;";
+		statusIndicator.classList.remove("bg-blue");
+		statusIndicator.classList.add("bg-peach");
+		console.log("cmd mode!");
+	});
+
+	cmdLine.addEventListener("cmdmodedisabled", () => {
+		statusIndicator.innerHTML = "&nbsp;NORMAL&nbsp;";
+		statusIndicator.classList.add("bg-blue");
+		statusIndicator.classList.remove("bg-peach");
+	});
+</script>
