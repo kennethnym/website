@@ -11,7 +11,7 @@ on june 7th, 2024, [@cloud11665](https://x.com/cloud11665) discovered that it is
 
 ## how to achieve the injection
 
-github uses [mathjax](https://www.mathjax.org/) to render math expressions presented in any github markdown content, such as README files, issue comments, and pull request comments. one of the many latex macros that mathjax supports is called `\unicode`. it allows the rendering of a unicode character. it also allows the font style of the character to be customized by letting the user pass in a custom font family, like so:
+this exploitation can be traced back to [this GitHub issue](https://github.com/mathjax/MathJax/issues/3129) originally reported by [opcode86](https://github.com/opcode86). github uses [mathjax](https://www.mathjax.org/) to render math expressions presented in any github markdown content, such as README files, issue comments, and pull request comments. one of the many latex macros that mathjax supports is called `\unicode`. it allows the rendering of a unicode character. it also allows the font style of the character to be customized by letting the user pass in a custom font family, like so:
 
 ```latex
 \unicode[myfont](x0000)
