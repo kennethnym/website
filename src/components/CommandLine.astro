@@ -14,7 +14,12 @@
 <script>
 	const cmds: Record<string, () => void> = {
 		q: () => {
-			document.body.style.visibility = "hidden";
+			const cmdEvent = new CustomEvent("closebuffer");
+			window.dispatchEvent(cmdEvent);
+		},
+		"help iccf": () => {
+			const cmdEvent = new CustomEvent("openiccf");
+			window.dispatchEvent(cmdEvent);
 		},
 	};
 
@@ -85,17 +90,22 @@
 				break;
 
 			case "Escape":
-				disableCmdMode();
+				if (isInCmdMode) {
+					event.preventDefault();
+					disableCmdMode();
+				}
 				break;
 
 			case "Backspace":
-				commandLineInput.value = commandLineInput.value.substring(
-					0,
-					commandLineInput.value.length - 1,
-				);
-				commandLineInput.size--;
-				if (commandLineInput.value === "") {
+				if (!isInCmdMode) break;
+				if (commandLineInput.value === ":") {
 					disableCmdMode();
+				} else {
+					commandLineInput.value = commandLineInput.value.substring(
+						0,
+						commandLineInput.value.length - 1,
+					);
+					commandLineInput.size--;
 				}
 				break;
 
