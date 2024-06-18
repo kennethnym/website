@@ -1,58 +1,87 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Link from "../components/Link.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import LuaLine from "../components/LuaLine.astro";
 import { getBlogs } from "../content/blog";
 
 const posts = (await getBlogs()).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const currentMonth = new Date().getMonth();
 ---
 
 <!doctype html>
 <html lang="en" class="latte dark:mocha">
-<head>
-	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-</head>
-<body
-	class="bg-base text-text max-w-4xl m-auto p-8"
->
-<header>
-	<p class="font-bold text-2xl">kennethnym</p>
-</header>
-<main class="py-8">
-	<p>dumping ground for my thoughts. all opinions are my own.</p>
-	<h1 class="font-bold mt-8 mb-2 text-lg visited">current projects:</h1>
-	<ul class="not-prose space-y-4 md:space-y-2">
-		<li>
-			<Link href="https://polygui.org">poly</Link>: a language-agnostic,
-			cross-platform GUI framework for building OS-native applications.
-		</li>
-		<li>
-			<Link href="https://polygui.org/nanopack/introduction/">nanopack</Link
-			>: a zero-runtime, type-safe binary serialization format.
-		</li>
-		<li>
-			<Link href="https://github.com/kennethnym/StarlightLauncher"
-			>starlight launcher</Link
-			>: an open-source android launcher with a search-based ui.
-		</li>
-	</ul>
-	<h1 class="font-bold mt-8 mb-2 text-lg visited">my thoughts:</h1>
-	<ul>
-		{
-			posts.map((post) => (
-				<li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded">
-					<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
-					<FormattedDate date={post.data.pubDate} />
-				</li>
-			))
-		}
-	</ul>
-</main>
-<hr class="py-2" />
-<Footer />
-</body>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body
+		class="bg-base text-text h-screen m-auto p-8 flex items-center justify-center overflow-hidden"
+	>
+		<main
+			class="py-8 max-w-2xl flex flex-col items-center space-y-0 leading-tight"
+		>
+			<p>KENNETHNYM v23.{currentMonth + 4}</p>
+			<p class="leading-none">&nbsp;</p>
+			<p>software engineer. unpaid hhkb salesman.</p>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<ul class="w-full">
+				{
+					posts.map((post) => (
+						<li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded space-x-8">
+							<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
+							<FormattedDate date={post.data.pubDate} />
+						</li>
+					))
+				}
+			</ul>
+		</main>
+		<div class="absolute w-full h-full px-2 -z-10 leading-tight">
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+			<p>~</p>
+		</div>
+		<LuaLine />
+	</body>
 </html>
