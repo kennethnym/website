@@ -71,11 +71,13 @@ no-neck-pain is also smart enough to detect splits, which means splits will work
 
 ## file tree
 
-most editors and even most neovim setups out there have a file tree always visible to the left of the current buffer. however, in my experience, i rarely need to look at the file tree, so having it constantly visible becomes a distraction. [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) is a file tree written in lua that supports floating mode.
+most editors and neovim setups out there have a file tree that is always visible to the left of the current buffer. however, in my experience, i rarely need to look at the file tree, so having it constantly visible becomes a distraction. [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) is a file tree written in lua that supports floating mode.
 
 ![Screenshot of nvim-tree's README](/nvim-tree-readme.png)
 
 in floating mode, the file tree is presented in a floating window instead of inside an always visible buffer. by default, it appears at the top left hand corner of the window, which is not very readable, so i found a piece of code online that centers the window. unfortunately, i was not able to trace back the source of the code.
+
+nvim-tree also supports file manipulation, such as creating files or directories. it allows me to create files by typing in the full path of where it should be, and it will creating all the necessary directories for me. very handy!
 
 with this setup, all that is visible at all time is the currently active buffer(s) and statuslines, and nothing else.
 
@@ -144,7 +146,7 @@ nvim-cmp also displays type info and docstring of the selected entry next to the
 
 ### overriding default selection ui with telescope
 
-by default, when making selections in neovim, for example selecting an lsp code action, the list of actions appear at the bottom left of the screen:
+by default, when making selections in neovim (e.g. selecting an lsp code action), the list of actions appear at the bottom left of the screen:
 
 ![Screenshot of neovim's default selection ui](/default-ui-select-screenshot.png)
 
