@@ -1,12 +1,18 @@
 <div id="command-line" class="w-full flex flex-row bg-base">
 	<input
+		aria-hidden="true"
 		id="command-line-input"
 		type="text"
 		size="1"
 		class="bg-base focus:outline-none active:outline-none cursor-default caret-transparent m-0"
 	/>
 	<div id="caret" aria-hidden="true" class="bg-text inline-block">&nbsp;</div>
-	<p id="status-text" class="absolute w-full h-full bg-base hidden italic"></p>
+	<p
+		aria-hidden="true"
+		id="status-text"
+		class="absolute w-full h-full bg-base hidden italic"
+	>
+	</p>
 </div>
 
 <script>
