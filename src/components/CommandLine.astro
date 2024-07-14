@@ -3,7 +3,6 @@
 		aria-hidden="true"
 		id="command-line-input"
 		type="text"
-		size="1"
 		class="bg-base focus:outline-none active:outline-none cursor-default caret-transparent m-0"
 	/>
 	<div id="caret" aria-hidden="true" class="bg-text inline-block">&nbsp;</div>
@@ -19,6 +18,10 @@
 	const cmds: Record<string, () => void> = {
 		q: () => {
 			const cmdEvent = new CustomEvent("closebuffer");
+			window.dispatchEvent(cmdEvent);
+		},
+		help: () => {
+			const cmdEvent = new CustomEvent("openhelp");
 			window.dispatchEvent(cmdEvent);
 		},
 		"help iccf": () => {
