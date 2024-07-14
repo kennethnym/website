@@ -1,56 +1,125 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Link from "../components/Link.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Footer from "../components/Footer.astro";
+import LuaLine from "../components/LuaLine.astro";
 import { getBlogs } from "../content/blog";
 
 const posts = (await getBlogs()).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const current = new Date();
+const currentMonth = current.getMonth();
+const currentYear = `${current.getUTCFullYear() - 1}`.substring(2);
 ---
 
 <!doctype html>
-<html lang="en" class="latte dark:mocha">
+<html lang="en" class="latte dark:mocha bg-base">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-base text-text max-w-4xl m-auto p-8">
-		<header>
-			<p class="font-bold text-2xl">kennethnym</p>
-		</header>
-		<main class="py-8">
-			<p>dumping ground for my thoughts. all opinions are my own.</p>
-			<h1 class="font-bold mt-8 mb-2 text-lg visited">current projects:</h1>
-			<ul class="not-prose space-y-4 md:space-y-2">
-				<li>
-					<Link href="https://polygui.org">poly</Link>: a language-agnostic,
-					cross-platform GUI framework for building OS-native applications.
-				</li>
-				<li>
-					<Link href="https://polygui.org/nanopack/introduction/">nanopack</Link
-					>: a zero-runtime, type-safe binary serialization format.
-				</li>
-				<li>
-					<Link href="https://github.com/kennethnym/StarlightLauncher"
-						>starlight launcher</Link
-					>: an open-source android launcher with a search-based ui.
-				</li>
-			</ul>
-			<h1 class="font-bold mt-8 mb-2 text-lg visited">my thoughts:</h1>
-			<ul>
-				{
-					posts.map((post) => (
-						<li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded">
-							<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
-							<FormattedDate date={post.data.pubDate} />
-						</li>
-					))
+	<body
+		class="tilde-background text-text h-screen m-auto sm:flex items-center justify-center sm:overflow-hidden"
+	>
+		<div class="visible p-8 sm:hidden">
+			<header>
+				<p class="font-bold text-2xl">kennethnym</p>
+			</header>
+			<main class="py-8">
+				<p>dumping ground for my thoughts. all opinions are my own.</p>
+				<h1 class="font-bold mt-8 mb-2 text-lg visited">current projects:</h1>
+				<ul class="not-prose space-y-4 md:space-y-2">
+					<li>
+						<Link href="https://polygui.org">poly</Link>: a language-agnostic,
+						cross-platform GUI framework for building OS-native applications.
+					</li>
+					<li>
+						<Link href="https://polygui.org/nanopack/introduction/"
+							>nanopack</Link
+						>: a zero-runtime, type-safe binary serialization format.
+					</li>
+					<li>
+						<Link href="https://github.com/kennethnym/mai">mai</Link>:
+						multilayer authenticity identifier, an ML model that attempts to
+						identify synthetic AI images
+					</li>
+				</ul>
+				<h1 class="font-bold mt-8 mb-2 text-lg visited">my thoughts:</h1>
+				<ul aria-label="recent blog posts" class="space-y-2">
+					{
+						posts.map((post) => (
+							<li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded space-x-4">
+								<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
+								<div class="text-right">
+									<FormattedDate date={post.data.pubDate} />
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</main>
+			<hr class="opacity-20 py-2" />
+			<Footer />
+		</div>
+
+		<div
+			class="hidden sm:visible scroll-container w-full h-full overflow-auto sm:flex items-center justify-center"
+		>
+			<main
+				class="py-8 px-4 max-w-4xl flex flex-col items-center space-y-0 leading-tight"
+			>
+				<header class="font-bold text-center">
+					KENNETHNYM v{currentYear}.{currentMonth + 3}
+				</header>
+				<p class="leading-none">&nbsp;</p>
+				<p class="text-center">software engineer. unpaid hhkb salesman.</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<ul
+					aria-label="recent blog posts"
+					class="w-full space-y-2 sm:space-y-0"
+				>
+					{
+						posts.map((post) => (
+							<li class="flex flex-row justify-between hover:bg-opacity-10 hover:bg-text -mx-2 px-2 rounded space-x-8">
+								<Link href={`/blog/${post.slug}`}>{post.data.title}</Link>
+								<div class="text-right">
+									<FormattedDate date={post.data.pubDate} />
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</main>
+		</div>
+
+		<LuaLine />
+
+		<style>
+			.scroll-container {
+				margin-bottom: 4ch;
+			}
+
+			@media (min-width: 640px) {
+				.tilde-background {
+					background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='10' height='20'><text x='0' y='16' fill='%2343465E' font-family='CommitMono'>~</text></svg>");
+					background-repeat: repeat-y;
 				}
-			</ul>
-		</main>
-		<hr class="py-2" />
-		<Footer />
+			}
+
+			@media (min-width: 640px) and (prefers-color-scheme: dark) {
+				.tilde-background {
+					background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='10' height='20'><text x='0' y='16' fill='%23C6D1F1' font-family='CommitMono'>~</text></svg>");
+					background-repeat: repeat-y;
+				}
+			}
+		</style>
+		<script>
+			window.addEventListener("closebuffer", () => {
+				document.body.style.display = "none";
+			});
+		</script>
 	</body>
 </html>

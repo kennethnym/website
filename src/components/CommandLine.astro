@@ -1,20 +1,32 @@
 <div id="command-line" class="w-full flex flex-row bg-base">
 	<input
+		aria-hidden="true"
 		id="command-line-input"
 		type="text"
-		size="1"
-		class="bg-base focus:outline-none active:outline-none cursor-default caret-transparent"
+		class="bg-base focus:outline-none active:outline-none cursor-default caret-transparent m-0"
 	/>
 	<div id="caret" aria-hidden="true" class="bg-text inline-block">&nbsp;</div>
-	<p id="status-text" class="absolute w-full h-full bg-base hidden italic">
-		test
+	<p
+		aria-hidden="true"
+		id="status-text"
+		class="absolute w-full h-full bg-base hidden italic"
+	>
 	</p>
 </div>
 
 <script>
 	const cmds: Record<string, () => void> = {
 		q: () => {
-			document.body.style.visibility = "hidden";
+			const cmdEvent = new CustomEvent("closebuffer");
+			window.dispatchEvent(cmdEvent);
+		},
+		help: () => {
+			const cmdEvent = new CustomEvent("openhelp");
+			window.dispatchEvent(cmdEvent);
+		},
+		"help iccf": () => {
+			const cmdEvent = new CustomEvent("openiccf");
+			window.dispatchEvent(cmdEvent);
 		},
 	};
 
@@ -36,8 +48,8 @@
 	function enableCmdMode() {
 		caret.style.display = "block";
 		statusText.classList.add("hidden");
-		commandLineInput.size = 1;
 		commandLineInput.value = ":";
+		commandLineInput.style.width = "1ch";
 		isInCmdMode = true;
 
 		const event = new Event("cmdmodeenabled");
@@ -48,8 +60,8 @@
 		caret.style.display = "none";
 		isInCmdMode = false;
 		if (clear) {
-			commandLineInput.size = 1;
 			commandLineInput.value = "";
+			commandLineInput.style.width = "0ch";
 		}
 
 		const event = new Event("cmdmodedisabled");
@@ -58,7 +70,15 @@
 
 	function appendChar(event: KeyboardEvent) {
 		commandLineInput.value += event.key;
-		commandLineInput.size += 1;
+		commandLineInput.style.width = `${commandLineInput.value.length}ch`;
+	}
+
+	function deleteChar() {
+		commandLineInput.value = commandLineInput.value.substring(
+			0,
+			commandLineInput.value.length - 1,
+		);
+		commandLineInput.style.width = `${commandLineInput.value.length}ch`;
 	}
 
 	function executeCommand() {
@@ -85,17 +105,18 @@
 				break;
 
 			case "Escape":
-				disableCmdMode();
+				if (isInCmdMode) {
+					event.preventDefault();
+					disableCmdMode();
+				}
 				break;
 
 			case "Backspace":
-				commandLineInput.value = commandLineInput.value.substring(
-					0,
-					commandLineInput.value.length - 1,
-				);
-				commandLineInput.size--;
-				if (commandLineInput.value === "") {
+				if (!isInCmdMode) break;
+				if (commandLineInput.value === ":") {
 					disableCmdMode();
+				} else {
+					deleteChar();
 				}
 				break;
 

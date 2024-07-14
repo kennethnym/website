@@ -3,14 +3,23 @@ import Link from "./Link.astro";
 import CommandLine from "./CommandLine.astro";
 ---
 
-<div class="absolute w-full bottom-0">
+<div class="hidden sm:block absolute w-full bottom-0">
 	<footer class="w-full bg-crust flex flex-row leading-tight">
 		<span
 			id="status-indicator"
-			class="bg-blue text-base inline-block leading-tight"
+			class="bg-blue font-bold text-base inline-block leading-tight"
 			>&nbsp;NORMAL&nbsp;</span
 		>
-		<div class="flex flex-row bg-surface0">
+		<div id="project-list" class="flex flex-row bg-surface0">
+			<span>&nbsp;</span>
+			<Link href="https://polygui.org">poly gui</Link>
+			<span>&nbsp;</span>
+			<Link href="https://polygui.org/nanopack/introduction/">nanopack</Link>
+			<span>&nbsp;</span>
+			<Link href="https://github.com/kennethnym/mai">mai</Link>
+			<span>&nbsp;</span>
+		</div>
+		<div id="contact-list" class="flex flex-row ml-auto bg-surface0">
 			<span>&nbsp;</span>
 			<Link href="https://github.com/kennethnym">github</Link>
 			<span>&nbsp;</span>
@@ -33,12 +42,19 @@ import CommandLine from "./CommandLine.astro";
 		statusIndicator.innerHTML = "&nbsp;COMMAND&nbsp;";
 		statusIndicator.classList.remove("bg-blue");
 		statusIndicator.classList.add("bg-peach");
-		console.log("cmd mode!");
 	});
 
 	cmdLine.addEventListener("cmdmodedisabled", () => {
 		statusIndicator.innerHTML = "&nbsp;NORMAL&nbsp;";
 		statusIndicator.classList.add("bg-blue");
 		statusIndicator.classList.remove("bg-peach");
+	});
+
+	window.addEventListener("openhelp", () => {
+		window.location.href = "https://vimhelp.org/";
+	});
+
+	window.addEventListener("openiccf", () => {
+		window.location.href = "https://vimhelp.org/uganda.txt.html#iccf";
 	});
 </script>
