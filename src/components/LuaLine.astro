@@ -59,8 +59,8 @@ import CommandLine from "./CommandLine.astro";
 	});
 
 	window.addEventListener("savebuffer", () => {
-		if (window.showSaveFilePicker) {
-			window.showSaveFilePicker();
+		if ((window as any).showSaveFilePicker) {
+			(window as any).showSaveFilePicker();
 		}
 	});
 </script>
