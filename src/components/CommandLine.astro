@@ -20,6 +20,10 @@
 			const cmdEvent = new CustomEvent("closebuffer");
 			window.dispatchEvent(cmdEvent);
 		},
+		w: () => {
+			const cmdEvent = new CustomEvent("savebuffer");
+			window.dispatchEvent(cmdEvent);
+		},
 		help: () => {
 			const cmdEvent = new CustomEvent("openhelp");
 			window.dispatchEvent(cmdEvent);

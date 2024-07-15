@@ -57,4 +57,10 @@ import CommandLine from "./CommandLine.astro";
 	window.addEventListener("openiccf", () => {
 		window.location.href = "https://vimhelp.org/uganda.txt.html#iccf";
 	});
+
+	window.addEventListener("savebuffer", () => {
+		if (window.showSaveFilePicker) {
+			window.showSaveFilePicker();
+		}
+	});
 </script>
