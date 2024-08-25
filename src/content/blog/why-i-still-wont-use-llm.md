@@ -7,6 +7,8 @@ pubDate: '25 Aug 2024'
 as llms get better and better at writing code, more and more people, at least on twt, have started to incorporate llms into their workflow. most people seem to agree that llms have been a game changer for coding, praising them for how much they have improved their productivity, how much easier it is to write code, and claiming that programmers who refuse to use them are "not using them correctly" and will eventually get left behind
 in my opinion, the effectiveness of llms in coding at their current state is vastly overblown. even if llms were as good as what avid users of them claim, i still won't see myself using it in any meaningful capacity.
 
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="zxx" dir="ltr"><a href="https://t.co/Mq8CIQiS9A">pic.twitter.com/Mq8CIQiS9A</a></p>&mdash; ThePrimeagen (@ThePrimeagen) <a href="https://twitter.com/ThePrimeagen/status/1827740308219605272?ref_src=twsrc%5Etfw">August 25, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## the art of programming
 
 programming can be broken down into two parts - solving problems algorithmically, breaking problems into steps that computers can follow within some contraints, thus forming a solution to the original problem; and expressing the solution in a way that the computer can understand.
