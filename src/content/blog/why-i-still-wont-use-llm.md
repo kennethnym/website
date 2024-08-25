@@ -4,7 +4,7 @@ description: the art of programming and why i won't use llm
 pubDate: '25 Aug 2024'
 ---
 
-as llms get better and better at writing code, more and more people, at least on twt, have started to incorporate llms into their workflow. most people seem to agree that llms have been a game changer for coding, praising how much they have improved their productivity, how much easier it is to write code, and that programmers who refuse to use them are "not using them correctly" and will eventually get left behind
+as llms get better and better at writing code, more and more people, at least on twt, have started to incorporate llms into their workflow. most people seem to agree that llms have been a game changer for coding, praising them for how much they have improved their productivity, how much easier it is to write code, and that programmers who refuse to use them are "not using them correctly" and will eventually get left behind
 in my opinion, the effectiveness of llms in coding at their current state is vastly overblown. even if llms were as good as what avid users of them claim, i still won't see myself using it in any meaningful capacity.
 
 ## the art of programming
