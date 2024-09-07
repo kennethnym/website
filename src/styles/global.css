@@ -33,9 +33,47 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: "Georgia";
+	src:
+		url("/fonts/georgia-webfont.woff2") format("woff2"),
+		url("/fonts/georgia-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Georgia";
+	src:
+		url("/fonts/georgiab-webfont.woff2") format("woff2"),
+		url("/fonts/georgiab-webfont.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Georgia";
+	src:
+		url("/fonts/georgiai-webfont.woff2") format("woff2"),
+		url("/fonts/georgiai-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Georgia";
+	src:
+		url("/fonts/georgiaz-webfont.woff2") format("woff2"),
+		url("/fonts/georgiaz-webfont.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+}
 
-body {
+body,
+header,
+pre {
 	font-family: "CommitMono", monospace, monospace;
+}
+
+body.blog {
+	font-family: "Georgia", serif;
 }
 
 .nf {

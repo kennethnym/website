@@ -16,11 +16,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} image={heroImage} />
 	</head>
 
-	<body class="bg-base text-text max-w-prose m-auto p-8">
+	<body class="blog bg-base text-text max-w-prose m-auto p-8">
 		<Header />
 		<main class="py-10">
 			<article>
-				<div class="prose dark:prose-invert">
+				<div class="prose prose-lg dark:prose-invert">
 					<div>
 						<div class="opacity-60">
 							<FormattedDate date={pubDate} />
