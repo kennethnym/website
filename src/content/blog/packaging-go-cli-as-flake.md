@@ -4,6 +4,10 @@ description: a guide in how to package a go cli as a nix flake
 pubDate: '7 Sept 2024'
 ---
 
+after being psyop-ed into using neovim, i have now also been manipulated into using [nix](https://nixos.org/), an awesome package manager that deserves more attention.
+
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">now i just need u to fall for nix thirst traps</p>&mdash; juwee (@juweeism) <a href="https://twitter.com/juweeism/status/1774069826241352146?ref_src=twsrc%5Etfw">March 30, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
 this is an article on how to package a go cli as a nix flake. however, instead of using a new go project, i will use [`nanoc`](https://github.com/nanopack-buffer/nanoc), the [NanoPack](https://nanopack.dev) codegen tool written in go as an example, because i think it more practically reflects how a flake is packaged.
 
 this guide assumes that you have some basic knowledge of the nix language. you can [learn about the language basics here](https://nix.dev/tutorials/nix-language.html). regardless, i will try to map nix's constructs to more conventional JavaScript to hopefully make it easier to understand.
