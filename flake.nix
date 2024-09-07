@@ -21,7 +21,7 @@
         {
           default = pkgs.mkShell {
             packages = [
-              pkgs.pnpm
+              pkgs.pnpm_8
               pkgs.flyctl
               pkgs.nodejs_20
             ];
