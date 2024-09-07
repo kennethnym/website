@@ -63,8 +63,8 @@ in javascript, this will look like:
 
 ```js
 const flake = {
-  inputs = {
-    nixpkgs = {
+  inputs: {
+    nixpkgs: {
       url: "github:NixOS/nixpkgs?tag=24.05"
     }
   }
@@ -94,7 +94,7 @@ translating it to javascript will look like this:
 
 ```js
 const flake = {
-  outputs = ({ nixpkgs }) => ({ })
+  outputs: ({ nixpkgs }) => ({ })
 }
 ```
 
