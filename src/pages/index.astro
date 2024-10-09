@@ -12,10 +12,7 @@ const posts = (await getBlogs()).sort(
 );
 const current = new Date();
 const currentMonth = current.getMonth();
-const currentYear =
-	`${currentMonth === 0 ? current.getUTCFullYear() - 1 : current.getUTCFullYear() - 2}`.substring(
-		2,
-	);
+const currentYear = `${current.getUTCFullYear() - 1}`.substring(2);
 ---
 
 <!doctype html>
