@@ -4,7 +4,7 @@ description: why your environment matters more than you think
 pubDate: Dec 4, 2024
 ---
 
-One thing I have learned over the past two years (the hard way) is that your environment, including your room, your social circle, your workplace, and even the content you consume, impacts you way more than you think. There is an old Chinese saying that goes:
+One thing I have learned the hard way over the past two years is that your environment, including your room, your social circle, your workplace, and even the content you consume, impacts you way more than you think. There is an old Chinese saying that goes:
 
 > Living with nice people is like entering a room full of flowers. Over time, you stop smelling the scent of the flowers. This is because you have adapted to the room.
 
