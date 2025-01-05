@@ -24,6 +24,8 @@
     "@flydotio/dockerfile": "latest",
     "@tailwindcss/typography": "^0.5.10",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
   }
 }

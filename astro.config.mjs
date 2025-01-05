@@ -1,6 +1,8 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -14,5 +16,7 @@ export default defineConfig({
 			// https://shiki.style/themes
 			theme: "catppuccin-mocha",
 		},
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex],
 	},
 });
