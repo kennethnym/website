@@ -10,9 +10,6 @@ import { getBlogs } from "../content/blog";
 const posts = (await getBlogs()).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const current = new Date();
-const currentMonth = current.getMonth();
-const currentYear = `${current.getUTCFullYear() - 1}`.substring(2);
 ---
 
 <!doctype html>
@@ -69,9 +66,7 @@ const currentYear = `${current.getUTCFullYear() - 1}`.substring(2);
 			<main
 				class="py-8 px-4 max-w-4xl flex flex-col items-center space-y-0 leading-tight"
 			>
-				<header class="font-bold text-center">
-					KENNETHNYM v{currentYear}.{currentMonth === 9 ? 0 : currentMonth + 3}
-				</header>
+				<header class="font-bold text-center">KENNETHNYM v23.5</header>
 				<p class="leading-none">&nbsp;</p>
 				<p class="text-center">software engineer. unpaid hhkb salesman.</p>
 				<p>&nbsp;</p>
