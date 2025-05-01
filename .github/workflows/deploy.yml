@@ -27,7 +27,7 @@ jobs:
           chmod 600 ~/.ssh/key
       - name: Deploy website
         run: |
-          MACHINE_IP=$(tailscale ip -6 $MACHINE)
+          MACHINE_IP="$(tailscale ip -6 $MACHINE)"
           ssh -i ~/.ssh/key kenneth@MACHINE_IP <<EOF
             cd /opt/website
             git pull
