@@ -15,7 +15,9 @@ jobs:
       - name: Setup Tailscale
         uses: tailscale/github-action@v3
         with:
-          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_CLIENT_SECRET }}
+          tags: tag:ci
       - name: Add SSH key
         env:
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
