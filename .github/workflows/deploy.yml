@@ -23,7 +23,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           mkdir -p ~/.ssh
-          MACHINE_IP="$(tailscale ip -4 $MACHINE)"
+          MACHINE_IP="$(tailscale ip -4 $MACHINE_NAME)"
           ssh-keyscan $MACHINE_IP >> ~/.ssh/known_hosts
           printf "%s" "$SSH_PRIVATE_KEY" > ~/.ssh/key
           # add a new line to the end of the private key file
@@ -32,7 +32,7 @@ jobs:
           chmod 600 ~/.ssh/key
       - name: Deploy website
         run: |
-          MACHINE_IP="$(tailscale ip -4 $MACHINE)"
+          MACHINE_IP="$(tailscale ip -4 $MACHINE_NAME)"
           ssh -i ~/.ssh/key "kenneth@$MACHINE_IP" /bin/bash << EOF
             cd /opt/website
             git pull
