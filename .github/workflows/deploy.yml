@@ -1,0 +1,39 @@
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy website to server
+    env:
+      MACHINE_USER_NAME: kenneth
+      MACHINE_NAME: helian
+    steps:
+      - name: Setup Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+      - name: Add SSH key
+        env:
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          MACHINE_IP="$(tailscale ip -6 $MACHINE)"
+          ssh-keyscan $MACHINE_IP >> ~/.ssh/known_hosts
+          printf "%s" "$SSH_KEY" > ~/.ssh/key
+          chmod 600 ~/.ssh/key
+      - name: Deploy website
+        run: |
+          MACHINE_IP=$(tailscale ip -6 $MACHINE)
+          ssh -i ~/.ssh/key kenneth@MACHINE_IP <<EOF
+            cd /opt/website
+            git pull
+            docker build -t website .
+            docker stop website-container
+            docker rm website-container
+            docker run --name=website-container --restart=always --publish 5432:80 --detach website
+          EOF
+
