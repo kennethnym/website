@@ -33,7 +33,7 @@ jobs:
       - name: Deploy website
         run: |
           MACHINE_IP="$(tailscale ip -4 $MACHINE)"
-          ssh -i ~/.ssh/key "kenneth@$MACHINE_IP" <<EOF
+          ssh -i ~/.ssh/key "kenneth@$MACHINE_IP" /bin/bash << EOF
             cd /opt/website
             git pull
             docker build -t website .
