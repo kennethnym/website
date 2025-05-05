@@ -4,8 +4,6 @@ description: my experience of no autocompletion in editors
 pubDate: May 5 2025
 ---
 
-# autocomplete considered harmful
-
 it is taken for granted that an editor provides autocompletion, even at a basic level. with a few exceptions, modern editors have autocompletion configured and enabled out of the box. because it is a default experience for editors, few has ever questioned whether it is an ideal coding environment for a developer. i used to take autocompletion for granted, and never even considered the possibility of turning it off. that changed 2 weeks ago, and having written code without it for an extended period, i think it provides a more pleasant coding experience, and i think more developers should give it a try.
 
 ## micro-stutters
