@@ -33,7 +33,7 @@ jobs:
       - name: Deploy website
         run: |
           MACHINE_IP="$(tailscale ip -4 $MACHINE_NAME)"
-          ssh -i ~/.ssh/key "$MACHINE_USER_NAME:@$MACHINE_IP" /bin/bash << EOF
+          ssh -i ~/.ssh/key "$MACHINE_USER_NAME@$MACHINE_IP" /bin/bash << EOF
             cd /opt/website
             git pull
             cd ../
