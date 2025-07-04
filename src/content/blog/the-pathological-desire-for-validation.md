@@ -1,0 +1,23 @@
+---
+title: the pathological desire for validation
+description: the experience of someone who struggles with self perception
+pubDate: Jul 04 2025
+---
+
+I have a pathological crave for validation, be it in my career, or in my relationships and friendships. Unfortunately, I am still suffering from this disease, and I do not yet have the solution, but I believe I have found the trace to the problem. This is a self reflection for people who are interested in the experience of being a person who has tragically low to no self worth and are struggling to crawl out of the trench. Even more tragically is the fact that I had normalized this for most of my life until recently.
+
+I was raised in an environment where emotions were strictly suppressed (man are not supposed to show emotions, remember!), and where love was transactional. I was conditioned from a young age that achievement was an expectation. I was taught that love and affections are manifested as efforts made to raise me, and I have this looming pressure that I need to pay it back when I grow older. I would only receive minimal affections when i had made an achievement, such as getting good grades or winning a competition. On the other hand, mistakes would bring upon severe punishments. On top of that, I was under the care of someones who lacked the ability to openly communicate and have conversations. Talking to them was like walking on eggshells. I had to be hyper attuned to their moods and be careful with my words so as to not trigger them. When I was in school, I had to hide my grades from my parents, because i knew they would not be nearly satisfactory. It would not be long, however, until the truth would drop, and then I would be met with visceral reactions and punishments.
+
+In school, even though I would not consider myself to be bullied, I would very often be the butt of the joke, or be the target to be pranked. back then, I brushed it off as my classmates being playful, but I most definitely did not enjoy the experience. I was also strictly prohibited from developing romantic relationships with anyone, which further stunned my emotional development. The only thing I was decent at was programming, but no one at school took it seriously. 
+
+Fast forward into my early adulthood, I managed to get myself into several romantic situations online. Each further tramped on my self worth, and made me question whether I would ever, ever, be worthy of love and affection, despite all the efforts I had put in.
+
+To this day, I still don't know what love and affection is, and thus how it feels to be the receiving end of it. My past experience had taught me that love is something I need to fight for. I need to work in order to receive affection. I need to put in effort to receive validations and approvals. If I don't receive them, it means that i am not working hard enough, and therefore not worthy and deserving of anything. In career, it means doubting my software engineering ability. In relationships and friendships, it means doubting myself as a person, constantly questioning my place in another person. Hanging out with friends brings me anxiety about how they view me; romantic interests even more so. When I bring this up with a person (which I only do if they are a very very significant person), I will receive my dose of validation, but the high will wear off shortly, like nicotine or alcohol, then I will need it again. Not only do I struggle to trust and internalize that validation, I constantly desire more of it to soothe myself.
+
+The thirst for validation also affects how i view others. I perceive myself as inferior to all my peers and friends. They write code better. They work on cooler things. They have more friends. They have way cooler interests. They have broader perspective of the world. They are cooler and smarter. They (you if you are reading this) may reject this, but I struggle to view myself in any other way.
+
+This is why it is deeply pathological - it is excessive, uncontrollable, and projects onto other people. It is extremely crippling, and it is unsustainable in the long term. I only recently started therapy, and I don't know how long or what it will take to pull myself out of this misery.
+
+Before then, I want to express my deepest gratitude to the person who I admire most admire, for revealing this deep rooted issue of mine that I have set aside for the longest time, for making me self reflect more, and for giving the reassurances when I needed them.
+
+Finally, if you have made it to here, I hope you find my experience helpful, and thank you for following along.
