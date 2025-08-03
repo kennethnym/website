@@ -1,15 +1,15 @@
-<div id="command-line" class="w-full flex flex-row bg-base">
+<div id="command-line" class="w-full flex flex-row bg-ctp-base">
 	<input
 		aria-hidden="true"
 		id="command-line-input"
 		type="text"
-		class="bg-base focus:outline-none active:outline-none cursor-default caret-transparent m-0"
+		class="bg-ctp-base focus:outline-none active:outline-none cursor-default caret-transparent m-0"
 	/>
 	<div id="caret" aria-hidden="true" class="bg-text inline-block">&nbsp;</div>
 	<p
 		aria-hidden="true"
 		id="status-text"
-		class="absolute w-full h-full bg-base hidden italic"
+		class="absolute w-full h-full bg-ctp-base hidden italic"
 	>
 	</p>
 </div>
@@ -94,7 +94,7 @@
 		} else {
 			statusText.innerHTML = `E492: Not an editor command: ${command}`;
 			statusText.classList.remove("hidden");
-			statusText.classList.add("text-red");
+			statusText.classList.add("text-ctp-red");
 		}
 	}
 

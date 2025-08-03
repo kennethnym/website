@@ -4,12 +4,13 @@ import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
 	site: "https://kennethnym.com",
-	integrations: [mdx(), sitemap(), tailwind()],
+	integrations: [mdx(), sitemap()],
+
 	markdown: {
 		shikiConfig: {
 			// Choose from Shiki's built-in themes (or add your own)
@@ -18,5 +19,9 @@ export default defineConfig({
 		},
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [rehypeKatex],
+	},
+
+	vite: {
+		plugins: [tailwindcss()],
 	},
 });

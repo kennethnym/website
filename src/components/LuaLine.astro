@@ -4,10 +4,10 @@ import CommandLine from "./CommandLine.astro";
 ---
 
 <div class="hidden sm:block absolute w-full bottom-0">
-	<footer class="w-full bg-crust flex flex-row leading-tight">
+	<footer class="w-full bg-ctp-mantle flex flex-row leading-tight">
 		<span
 			id="status-indicator"
-			class="bg-blue font-bold text-base inline-block leading-tight"
+			class="bg-ctp-blue font-bold text-ctp-base inline-block leading-tight"
 			>&nbsp;NORMAL&nbsp;</span
 		>
 		<div id="project-list" class="flex flex-row bg-surface0">
@@ -40,14 +40,14 @@ import CommandLine from "./CommandLine.astro";
 
 	cmdLine.addEventListener("cmdmodeenabled", () => {
 		statusIndicator.innerHTML = "&nbsp;COMMAND&nbsp;";
-		statusIndicator.classList.remove("bg-blue");
-		statusIndicator.classList.add("bg-peach");
+		statusIndicator.classList.remove("bg-ctp-blue");
+		statusIndicator.classList.add("bg-ctp-peach");
 	});
 
 	cmdLine.addEventListener("cmdmodedisabled", () => {
 		statusIndicator.innerHTML = "&nbsp;NORMAL&nbsp;";
-		statusIndicator.classList.add("bg-blue");
-		statusIndicator.classList.remove("bg-peach");
+		statusIndicator.classList.add("bg-ctp-blue");
+		statusIndicator.classList.remove("bg-ctp-peach");
 	});
 
 	window.addEventListener("openhelp", () => {

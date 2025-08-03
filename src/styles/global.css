@@ -1,3 +1,10 @@
+@import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+
+@plugin "@tailwindcss/typography";
+
+@source inline("text-ctp-red");
+
 @font-face {
 	font-family: "CommitMono";
 	src: url("/fonts/CommitMono-400-Regular.otf") format("opentype");
