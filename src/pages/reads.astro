@@ -1,0 +1,79 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+---
+
+<!doctype html>
+<html
+	lang="en"
+	class="bg-stone-200 dark:bg-stone-900 text-stone-700 dark:text-stone-400"
+>
+	<head>
+		<BaseHead
+			title="Kenneth's Reads"
+			description="Quotes and notes from my readings."
+		/>
+	</head>
+	<body class="reads px-8">
+		<main class="mt-8 mb-20 md:mt-0 max-w-4xl grid grid-cols-11">
+			<header class="col-span-11 grid grid-cols-11">
+				<h1
+					class="col-span-10 md:col-span-3 md:justify-self-end text-lg font-bold mt-8"
+				>
+					<a href="/" class="hover:underline">Kenneth</a>&#39;s Reads
+				</h1>
+				<p
+					class="col-span-10 md:col-span-8 text-lg font-medium mb-10 md:mb-20 md:ml-12 md:mt-8"
+				>
+					Quotes and notes from my readings.
+				</p>
+			</header>
+
+			<div class="md:justify-self-end col-span-10 md:col-span-3">
+				<div class="flex items-center opacity-70 mb-2 md:mb-20">
+					<div
+						class="w-2 h-2 bg-green-500 border-2 border-green-300 rounded-full animate-pulse mr-2"
+					>
+					</div>
+					<h2 class="tracking-tight">Now Reading</h2>
+				</div>
+			</div>
+
+			<div class="col-span-10 md:col-span-8 md:ml-12 mb-16 md:mb-20">
+				<p class="font-medium underline">The Creative Act</p>
+			</div>
+
+			<div
+				class="md:justify-self-end col-span-10 md:col-span-3 flex flex-col md:items-end opacity-70"
+			>
+				<p class="text-6xl leading-none font-black select-none">“</p>
+				<h2 class="leading-none -translate-y-8 tracking-tight">
+					The Creative Act
+				</h2>
+			</div>
+			<p
+				class="col-span-10 md:col-span-8 max-w-prose md:ml-12 text-2xl md:text-4xl tracking-tight mb-20"
+			>
+				Practicing a way of being that allows you to see the world through
+				uncorrupted, innocent eyes can free you to act in concert with the
+				universe's timetable.
+			</p>
+
+			<h2
+				class="col-span-10 md:col-span-3 tracking-tight md:justify-self-end mb-4"
+			>
+				All Books
+			</h2>
+			<ul class="col-span-10 md:col-span-8 md:ml-12 space-y-2">
+				<li>
+					<a class="underline">User Friendly</a>
+				</li>
+				<li>
+					<a class="underline">Zero To One</a>
+				</li>
+				<li>
+					<a class="underline">Being You</a>
+				</li>
+			</ul>
+		</main>
+	</body>
+</html>
