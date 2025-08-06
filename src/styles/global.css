@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@catppuccin/tailwindcss/mocha.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @plugin "@tailwindcss/typography";
 
@@ -84,6 +85,34 @@ body.blog {
 	font-family: "Source Serif 4", "Georgia", serif;
 }
 
+body.reads * {
+	font-family: "Inter", sans-serif;
+}
+
 .nf {
 	font-family: "NerdFont";
+}
+
+.scroll-to-blur {
+	animation-name: scroll-to-blur;
+	animation-duration: 1ms; /* Firefox requires this to apply the animation */
+	animation-timeline: scroll(block nearest);
+}
+
+@keyframes scroll-to-blur {
+	0% {
+		filter: blur(0px);
+	}
+
+	20% {
+		filter: blur(5px);
+		transform: scale(0.99);
+		opacity: 0%;
+	}
+
+	100% {
+		filter: blur(5px);
+		transform: scale(0.99);
+		opacity: 0%;
+	}
 }

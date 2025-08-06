@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+
+type Props = CollectionEntry<"read">["data"];
+
+const { title, author, goodReadLink } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Kenneth's Read - ${title}`}
+			description={`Notes I made for the book ${title}`}
+		/>
+	</head>
+	<body
+		class="w-full reads -z-2 bg-stone-200 dark:bg-stone-900 flex justify-center dark:text-stone-300 pt-20 md:py-40"
+	>
+		<header
+			class="fixed scroll-to-blur w-full -z-1 top-0 left-0 right-0 flex justify-center"
+		>
+			<div
+				class="w-full max-w-[calc(65ch+var(--spacing)*24)] px-8 md:px-12 py-4 md:py-12 opacity-80"
+			>
+				<h1 class="font-bold text-sm">Kenneth's Read</h1>
+				<h2 class="text-sm">Quotes and notes from my readings.</h2>
+			</div>
+		</header>
+		<main
+			class="relative w-full max-w-[calc(65ch+var(--spacing)*24)] px-8 md:px-12 py-10 rounded-t-2xl md:rounded-2xl shadow-lg border border-stone-300 dark:border-stone-600 bg-stone-100 dark:bg-stone-800 min-h-[calc(100vh-var(--spacing)*28)]"
+		>
+			<article>
+				<div class="flex justify-between items-center w-full mb-10">
+					<header class="flex flex-col">
+						<h1 class="font-bold">{title}</h1>
+						<h2 class="font-medium">{author}</h2>
+					</header>
+					<a href={goodReadLink} class="underline">GoodRead</a>
+				</div>
+				<div
+					class="prose dark:prose-invert prose-headings:font-medium prose-headings:tracking-tight prose-h2:mb-0.5 dark:prose-headings:text-stone-300 dark:text-stone-300 dark:marker:text-stone-300 prose-ul:list-none prose-ul:p-0 prose-li:p-0 prose-li:before:content-['•'] prose-li:relative prose-li:before:absolute prose-li:before:left-0 prose-li:before:-translate-x-4"
+				>
+					<slot />
+				</div>
+			</article>
+			<div
+				class="absolute left-6 top-0 -translate-y-1/2 transition-all rounded-lg bg-stone-100 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 shadow-lg h-min"
+			>
+				<a
+					class="block px-2 py-0.5 text-sm opacity-80 transition-all"
+					href="/read">&lt;- All books</a
+				>
+			</div>
+		</main>
+	</body>
+</html>
