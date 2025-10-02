@@ -1,7 +1,7 @@
 ---
-title: Fear of Falling Behind
+title: fear of falling behind
 description: The looming pressure of keeping up with everything
-pubDate: Aug 25 2025
+pubDate: Oct 1 2025
 ---
 
 I am lucky enough to be in an [environment](https://kennethnym.com/blog/your-environment-dictates-everything/) where I am surrounded by bright-minded, high-achieving people that are doing incredible work every day, and they are nothing short of inspiring. Safe to say - I am the dumbest person in the room. On one hand, I get to learn from them every day, driving myself to get better. On the other, comparison inevitably arises within myself, and it has been slowly getting onto me recently: will I ever be good enough?
