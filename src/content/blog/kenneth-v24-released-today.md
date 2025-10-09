@@ -4,8 +4,6 @@ description: Release note for Kenneth v24.0
 pubDate: Oct 8 2025
 ---
 
-# Kenneth v24.0 released today
-
 I am happy to announce that I have officially released v24.0 of myself today. Kenneth v24 is the biggest release ever, containing heaps of improvements and new features. This blog post serves as a release note of what has changed since v23. For the impatient, here are several notable breaking changes:
 
 - New job @ [Ona](https://ona.com) working on coding agents
