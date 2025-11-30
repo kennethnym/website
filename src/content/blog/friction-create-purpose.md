@@ -1,6 +1,6 @@
 ---
 title: frictions create purpose
-description: finding one's purpose in life
+description: finding my life's purpose through frictions
 pubDate: Nov 30 2025
 ---
 
