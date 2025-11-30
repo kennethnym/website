@@ -10,7 +10,7 @@ Take this further: an autonomous machine that reads one's mind and body state an
 
 This is a life without friction. There is no action required for the person in order to survive. All they need to do is remain still, and the machine will keep them alive. Yet, it is grotesque and frightening, because it is meaningless.
 
-I like to frame my life as a storyteller authoring a book. Every human is born with an empty book, and my purpose is to fill mine with engaging and meaningful stories. Without knowledge and inspirations, nothing can be written. Indeed, one is born without them, and frictions are there to fill the gap.
+I like to frame my life as a story book. Every human is born with an empty book, and my purpose is to fill mine with engaging and meaningful stories. Without knowledge and inspirations, nothing can be written. Indeed, one is born without them, and frictions are there to fill the gap.
 
 This is why frictions create purpose. There is no innate purpose in life, and no one is born with one. Purpose cannot be defined without actions. Frictions encourage actions. Actions create knowledge and inspirations, and ultimately inspires purpose. One does not look for purpose. One acts, and the rest follows.
 
