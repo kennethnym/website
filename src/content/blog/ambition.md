@@ -1,5 +1,5 @@
 ---
-title: 2026: ambition
+title: "2026: ambition"
 description: the beginning of the marathon
 pubDate: Jan 1 2026
 ---
