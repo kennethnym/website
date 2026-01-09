@@ -26,7 +26,7 @@ More importantly, the screen shows me a list of "candidates", the current "winne
 
 The hard part is done. Now all that is needed is to push the information to the Glass. This is what it looks like:
 
-![](/glass-live-card-demo.png)
+![](/glass-live-card-demo.jpg)
 
 The Glass subscribes to the feed with the companion app over Bluetooth Low Energy. Since all the heavy computing is done ahead of time, all it needs to do is to parse the JSON and extract information from it and put it on the screen.
 
