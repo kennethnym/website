@@ -3,6 +3,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypeMermaid from "rehype-mermaid";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -12,13 +13,20 @@ export default defineConfig({
 	integrations: [mdx(), sitemap()],
 
 	markdown: {
+		syntaxHighlight: {
+			type: "shiki",
+			excludeLangs: ["mermaid", "math"],
+		},
 		shikiConfig: {
 			// Choose from Shiki's built-in themes (or add your own)
 			// https://shiki.style/themes
 			theme: "catppuccin-mocha",
 		},
 		remarkPlugins: [remarkMath],
-		rehypePlugins: [rehypeKatex],
+		rehypePlugins: [
+			rehypeKatex,
+			[rehypeMermaid, { strategy: "img-png", dark: true }],
+		],
 	},
 
 	vite: {
