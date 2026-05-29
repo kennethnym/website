@@ -1,4 +1,8 @@
-# what is the meaning of it all?
+---
+title: what is the meaning of it all?
+description: the eternal yearning for meaning
+pubDate: May 29 2026
+---
 
 i stood atop the hill. i reached the goal that i once set for myself. i was convinced that once i achieved what i wanted in life, then i would be fulfilled. yet, i still felt like an empty shell.
 
