@@ -1,5 +1,5 @@
 ---
-title: Kenneth v24.0 released today
+title: Kenneth v25.0 released today
 description: Release note for Kenneth v25.0
 pubDate: Oct 8 2026
 ---
